@@ -1,0 +1,35 @@
+/*General CSS Styles*/
+body, html{
+	height: 100%;
+	font-family: 'Chakra Petch';
+}
+
+.card-header{
+	background-color: #071160;
+	border-color: #071160;
+    color: #ffffff; 
+}
+
+.rounded{
+	object-fit: cover;
+	clip-path: circle();
+}
+
+div#loginForm{
+    width: 22rem;
+    border: none !important;
+}
+
+.cust-btn-login{
+    background-color: #D6A73D;
+	border-color: #D6A73D;
+    color: #ffffff;
+}
+
+main#mainbg{
+	background: url("./images/bg1.png");
+	position:relative;
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
+}
