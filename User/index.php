@@ -5,18 +5,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LNU Paper App</title>
-    <link rel="icon" type="images/x-icon" href="" />
+	<link rel="icon" type="images/x-icon" href="" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Chakra Petch' rel='stylesheet'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="customcss.css">
 </head>
 
 <body>
-    <main class="container-fluid" id="mainbg">
-        <div class="row" style="height: 100vh;">
+	<main class="container-fluid" id="mainbg">
+		<div class="row" style="height: 100vh;">
 			<div class="col-12 d-flex justify-content-center align-items-end">
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center pb-4">
@@ -25,7 +25,7 @@
 				</div>
 			</div>
 			<div class="col-12 d-flex justify-content-center align-items-start">
-				<div class="card border-light text-center"  id="loginForm">
+				<div class="card border-light text-center" id="loginForm">
 					<div class="card-header" style="padding-bottom: 0px;">
 						<h2 class="fw-bold card-text-header">WELCOME!</h2>
 					</div>
@@ -35,12 +35,12 @@
 					<div class="card-body">
 						<form action="" method="post">
 							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="stuID" name ="stuID" oninput="validateID(this)" placeholder="2001988" required>
+								<input type="text" class="form-control" id="stuID" name="stuID" oninput="validateID(this)" placeholder="2001988" required>
 								<label for="stuID">STUDENT ID</label>
 							</div>
 							<div class="input-group mb-3">
 								<div class="form-floating">
-									<input type="password" class="form-control" id="password" name ="password" placeholder="password" required>
+									<input type="password" class="form-control" id="password" name="password" placeholder="password" required>
 									<label for="password">PASSWORD</label>
 								</div>
 								<div class="input-group-append">
@@ -51,31 +51,31 @@
 								</div>
 							</div>
 
-                            <div class="d-grid gap-2 my-2">
-                                <button type="submit" class="btn btn-warning cust-btn-login"><span class="fw-bold">LOGIN</span></button>
-                            </div>
+							<div class="d-grid gap-2 my-2">
+								<button type="submit" class="btn btn-warning cust-btn-yellow"><span class="fw-bold">LOGIN</span></button>
+							</div>
 
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-    </main>
+	</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
 		function validateID(input) {
-            var regex = /^[0-9]*$/; // Regular expression to allow only numbers
+			var regex = /^[0-9]*$/; // Regular expression to allow only numbers
 
-            if (!regex.test(input.value)) {
-                input.value = input.value.replace(/[^0-9]/g, ''); // Remove any characters that are not numeric
-            }
+			if (!regex.test(input.value)) {
+				input.value = input.value.replace(/[^0-9]/g, ''); // Remove any characters that are not numeric
+			}
 
-            if (input.value.length > 7) {
-                input.value = input.value.slice(0, 7); // Truncate the input value to 7 characters if it exceeds the limit
-            }
-        }
+			if (input.value.length > 7) {
+				input.value = input.value.slice(0, 7); // Truncate the input value to 7 characters if it exceeds the limit
+			}
+		}
 
 		function password_show_hide() {
 			var x = document.getElementById("password");

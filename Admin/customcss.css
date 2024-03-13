@@ -1,35 +1,81 @@
 /*General CSS Styles*/
-body, html{
-	height: 100%;
-	font-family: 'Chakra Petch';
+body,
+html {
+  height: 100%;
+  font-family: "Chakra Petch";
 }
 
-.card-header{
-	background-color: #071160;
-	border-color: #071160;
-    color: #ffffff; 
+.section-100{
+	min-height: calc(100% - 50px);
+	width: 100%;
 }
 
-.rounded{
-	object-fit: cover;
-	clip-path: circle();
+header.navbar {
+  background-color: #071160;
 }
 
-div#loginForm{
-    width: 22rem;
-    border: none !important;
+.bd-mode-toggle {
+  z-index: 1500;
 }
 
-.cust-btn-login{
-    background-color: #D6A73D;
-	border-color: #D6A73D;
-    color: #ffffff;
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
 }
 
-main#mainbg{
-	background: url("./images/bg2.png");
-	position:relative;
-	background-position: center;
-	background-size: cover;
-	min-height: 100%;
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+a.active {
+  background-color: #ffe761 !important;
+  color: black !important;
+  font-weight: bolder !important;
+}
+
+.card-header {
+  background-color: #071160;
+  border-color: #071160;
+  color: #ffffff;
+}
+
+.rounded {
+  object-fit: cover;
+  clip-path: circle();
+}
+/*----------------------------------------------------------*/
+
+/*Specific CSS Styles*/
+
+/*index.php*/
+div#loginForm {
+  width: 22rem;
+  border: none !important;
+}
+
+.cust-btn-login {
+  background-color: #d6a73d;
+  border-color: #d6a73d;
+  color: #ffffff;
+}
+
+main#mainbg {
+  background: url("./images/bg2.png");
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  min-height: 100%;
 }

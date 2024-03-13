@@ -4,6 +4,26 @@ body, html{
 	font-family: 'Chakra Petch';
 }
 
+nav.navbar{
+	background-color: #071160;
+}
+
+footer{
+	background-color: #071160;
+}
+
+a.nav-link{
+	color:#FFFFFF;
+}
+
+a.nav-link:hover{
+	color: #D6A73D !important;
+}
+
+a.nav-link.active{
+	color: #D6A73D !important;
+}
+
 .card-header{
 	background-color: #071160;
 	border-color: #071160;
@@ -15,17 +35,18 @@ body, html{
 	clip-path: circle();
 }
 
-div#loginForm{
-    width: 22rem;
-    border: none !important;
-}
-
-.cust-btn-login{
+.cust-btn-yellow{
     background-color: #D6A73D;
 	border-color: #D6A73D;
     color: #ffffff;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
+/*----------------------------------------------------------*/
 
+
+/*Specific CSS Styles*/
+
+/*index.php*/
 main#mainbg{
 	background: url("./images/bg1.png");
 	position:relative;
@@ -33,3 +54,29 @@ main#mainbg{
 	background-size: cover;
 	min-height: 100%;
 }
+
+div#loginForm{
+    width: 22rem;
+    border: none !important;
+}
+/*===========*/
+
+/*home.php*/
+section.hero#homeHeader{
+	background: url("./images/bg2.png");
+	position:relative;
+	background-position: center;
+	background-size: cover;
+	width: 100% !important;
+	height: 100vh !important;
+	padding: 3rem;
+}
+
+h1.title{
+	color: white;
+	text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+	font-size: 6.5rem;
+	margin-bottom: -1rem;
+}
+/*===========*/
+/*----------------------------------------------------------*/
