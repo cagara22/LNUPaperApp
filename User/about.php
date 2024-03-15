@@ -41,14 +41,14 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item px-5 fw-bold">
-                            <a class="nav-link active" aria-current="page" href="home.php">HOME</a>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="home.php">HOME</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link" href="papers.php">PAPERS</a>
                         </li>
-                        <li class="nav-item px-3">
-                            <a class="nav-link" href="about.php">ABOUT</a>
+                        <li class="nav-item px-5 fw-bold">
+                            <a class="nav-link active" aria-current="page" href="about.php">ABOUT</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,31 +66,10 @@
     </header>
 
     <main>
-        <section class="hero d-flex flex-column justify-content-center align-items-start" id="homeHeader">
-            <h1 class="title fw-bold"><span style="color: #071160;">L</span>earning and</h1>
-            <h1 class="title fw-bold">Nurturing</h1>
-            <h1 class="title fw-bold">Understanding...</h1>
-            <div class="py-5">
-                <a href="papers.php"><button type="button" class="btn btn-warning btn-lg cust-btn-yellow fs-3">VIEW PAPERS</button></a>
-            </div>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center align-items-center" id="homeSecondSec">
-            <h1>Hello</h1>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center align-items-center" id="homeThirdSec">
+        <section class="d-flex flex-column justify-content-center align-items-start" id="">
             <h1>Hello</h1>
         </section>
     </main>
-
-    <footer class="d-flex flex-column flex-md-row text-center justify-content-center py-4 px-4 px-xl-5">
-		<!-- Copyright -->
-		<div class="text-white mb-3 mb-md-0">
-			Copyright © 2023. All rights reserved.
-		</div>
-		<!-- Copyright -->
-	</footer>
 
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->

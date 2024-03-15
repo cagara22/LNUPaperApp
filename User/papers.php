@@ -41,11 +41,11 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item px-5 fw-bold">
-                            <a class="nav-link active" aria-current="page" href="home.php">HOME</a>
-                        </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="papers.php">PAPERS</a>
+                            <a class="nav-link" href="home.php">HOME</a>
+                        </li>
+                        <li class="nav-item px-5 fw-bold">
+                            <a class="nav-link active" aria-current="page" href="papers.php">PAPERS</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link" href="about.php">ABOUT</a>
@@ -66,21 +66,43 @@
     </header>
 
     <main>
-        <section class="hero d-flex flex-column justify-content-center align-items-start" id="homeHeader">
-            <h1 class="title fw-bold"><span style="color: #071160;">L</span>earning and</h1>
-            <h1 class="title fw-bold">Nurturing</h1>
-            <h1 class="title fw-bold">Understanding...</h1>
-            <div class="py-5">
-                <a href="papers.php"><button type="button" class="btn btn-warning btn-lg cust-btn-yellow fs-3">VIEW PAPERS</button></a>
+        <section class="d-flex flex-column justify-content-center align-items-center" id="papersHeader"  style="padding-top: 4.8rem;">
+            <h1 class="display-1 fw-bold" style="color: #071160;">COLLEGES</h1>
+            <div class="row" style="width:100%">
+                <div class="col-12 col-lg-4 my-1">
+                    <div class="card text-center align-items-center mx-auto p-3 text-bg-yellow">
+                        <a href="#" class="stretched-link">
+                            <img src="./images/coelogo.png" class="cust-img-75" alt="COE logo">
+                        </a>
+                        <div class="card-body">
+                            <h1 class="card-title fw-bold">COE</h5>
+                            <p class="card-text lh-1">To produce  world class educators and education leaders imbued with ideals,  aspirations, values and traditions of Philippine life that can adapt to  the challenges of the world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 my-1">
+                    <div class="card text-center align-items-center mx-auto p-3 text-bg-navyblue">
+                        <a href="#" class="stretched-link">
+                            <img src="./images/caslogo.png" class="cust-img-75" alt="CAS logo">
+                        </a>
+                        <div class="card-body">
+                            <h1 class="card-title fw-bold">CAS</h1>
+                            <p class="card-text lh-1">To provide world class professionals in the arts and sciences, and develop and maintain curricular programs that are relevant and responsive to regional and national development goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 my-1">
+                    <div class="card text-center align-items-center mx-auto p-3 text-bg-black">
+                        <a href="#" class="stretched-link">
+                            <img src="./images/cmelogo.png" class="cust-img-75" alt="CME logo">
+                        </a>
+                        <div class="card-body">
+                            <h1 class="card-title fw-bold">CME</h1>
+                            <p class="card-text lh-1">To provide  an academic perspective for the students to acquire the necessary tools  for development within the managerial context.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center align-items-center" id="homeSecondSec">
-            <h1>Hello</h1>
-        </section>
-
-        <section class="d-flex flex-column justify-content-center align-items-center" id="homeThirdSec">
-            <h1>Hello</h1>
         </section>
     </main>
 

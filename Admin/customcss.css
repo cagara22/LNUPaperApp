@@ -167,6 +167,25 @@ a.active {
   object-fit: cover;
   clip-path: circle();
 }
+
+.sub-title{
+	color: #071160;
+}
+
+.text-bg-yellow{
+	color: whitesmoke;
+	background-color: #D6A73D;
+}
+
+.text-bg-navyblue{
+	color: whitesmoke;
+	background-color: #071160;
+}
+
+.text-bg-black{
+	color: whitesmoke;
+	background-color: #292929;
+}
 /*----------------------------------------------------------*/
 
 /*Specific CSS Styles*/
