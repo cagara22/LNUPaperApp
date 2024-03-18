@@ -66,39 +66,35 @@
     </header>
 
     <main>
-        <section class="d-flex flex-column justify-content-center align-items-center" id="papersHeader" style="padding-top: 4.8rem;">
-            <h1 class="display-1 fw-bold" style="color: #071160;">COLLEGES</h1>
-            <div class="row" style="width:100%">
-                <div class="col-12 col-lg-4 my-1">
-                    <div class="card text-center align-items-center mx-auto p-3 text-bg-yellow">
-                        <a href="#" class="stretched-link">
-                            <img src="./images/coelogo.png" class="cust-img-75" alt="COE logo">
-                        </a>
-                        <div class="card-body">
-                            <h1 class="card-title fw-bold">COE</h5>
-                                <p class="card-text lh-1">To produce world class educators and education leaders imbued with ideals, aspirations, values and traditions of Philippine life that can adapt to the challenges of the world.</p>
+        <section class="d-flex flex-column" id="papersTwoHeader" style="padding-top: 4.8rem;">
+            <div class="d-flex justify-content-center align-items-center">
+                <h1 class="text-center mt-3 fw-bold" style="color: #071160;;">Name of Thesis Paper</h1>
+            </div>
+            <div class="col-12">
+                <img src="images/paperlist-line.png" style="width: 100%;" alt="">
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <h4 class="fw-bold" style="color: #d6a73d;">2020 - BSIT</h4>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-9 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title fs-5 fw-bold" style="color: #071160;">ABSTRACT:</h5>
+                                <p class="card-text ms-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu nec nulla vestibulum tristique vel nec turpis. Nullam efficitur magna non est finibus, ac auctor nisi laoreet. Fusce auctor, ante eu sollicitudin auctor, orci nisi pellentesque sapien, ac euismod elit nunc in tortor. Nullam quis justo ut elit tristique tempus. Vivamus id enim et urna vestibulum fringilla eget sit amet orci. Suspendisse potenti. Phasellus et purus vel dolor ultricies fermentum in nec ligula. Proin et justo ut lectus ultrices elementum in a erat. Maecenas id semper justo. Integer sagittis, velit at aliquet bibendum, elit turpis posuere elit, non luctus urna orci vel nulla. Sed ut arcu ac nunc pharetra feugiat. Vestibulum ullamcorper auctor arcu, at volutpat libero luctus vel. Curabitur nec felis id mauris imperdiet commodo eget eu orci. Sed ac quam sed nisl auctor facilisis in sit amet sapien. Fusce suscipit, lectus a euismod ultricies, justo elit fermentum risus, at vulputate lectus libero quis orci. Vivamus vel tortor a leo consectetur facilisis vel at augue. Phasellus hendrerit scelerisque metus eu fringilla. Pellentesque interdum eleifend ex, eget semper eros hendrerit id. Donec consectetur hendrerit tellus ac facilisis. Nullam nec ante at nisl iaculis rhoncus. Aenean facilisis ante nec ligula vestibulum, nec congue purus varius. Ut vitae congue quam, vel tempus arcu. Curabitur venenatis, risus non condimentum hendrerit, justo lacus blandit urna, in gravida arcu elit ut est.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-4 my-1">
-                    <div class="card text-center align-items-center mx-auto p-3 text-bg-navyblue">
-                        <a href="#" class="stretched-link">
-                            <img src="./images/caslogo.png" class="cust-img-75" alt="CAS logo">
-                        </a>
-                        <div class="card-body">
-                            <h1 class="card-title fw-bold">CAS</h1>
-                            <p class="card-text lh-1">To provide world class professionals in the arts and sciences, and develop and maintain curricular programs that are relevant and responsive to regional and national development goals.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 my-1">
-                    <div class="card text-center align-items-center mx-auto p-3 text-bg-black">
-                        <a href="#" class="stretched-link">
-                            <img src="./images/cmelogo.png" class="cust-img-75" alt="CME logo">
-                        </a>
-                        <div class="card-body">
-                            <h1 class="card-title fw-bold">CME</h1>
-                            <p class="card-text lh-1">To provide an academic perspective for the students to acquire the necessary tools for development within the managerial context.</p>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title fs-5 fw-bold" style="color: #071160;">AUTHORS:</h5>
+                                <p class="card-text ms-2">Vincent Felix S. Cagara <br>
+                                    Jovonovich J. Jardani <br>
+                                    Debbie Nic A. Ibaniez <br>
+                                    Ellon Musk B. Masumbing</p>
+                            </div>
                         </div>
                     </div>
                 </div>
