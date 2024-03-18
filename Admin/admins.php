@@ -24,6 +24,9 @@
   	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
   	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
+    <!--SweetAlert2-->
+    <script src="./assets/sweetalert2/sweetalert2.all.js"></script>
+
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="customcss.css">
 </head>
@@ -136,6 +139,86 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">ADMINS</h1>
                 </div>
+                <form class="row g-3" method="GET" action="">
+                    <div class="col-8 col-lg-10">
+                        <input type="text" class="form-control" id="searchname" name="searchname" oninput="validateSearch(this)" placeholder="Search...">
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <button type="submit" class="btn btn-search w-100 fw-bold" name="search">SEARCH</button>
+                    </div>
+                </form>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end py-2">
+                    <a class="btn btn-add fw-bold w-100" href="" role="button">ADD NEW ADMINS</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Username</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Middle Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Suffix</th>
+                                <th scope="col">Sex</th>
+                                <th scope="col">Role</th>
+                                <th scope="col" colspan="2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td class='text-center'>Admin01</td>
+                                <td class='text-center'>Vincent Felix</td>
+                                <td class='text-center'>Sabalza</td>
+                                <td class='text-center'>Cagara</td>
+                                <td class='text-center'>JR</td>
+                                <td class='text-center'>Male</td>
+                                <td class='text-center'>ADMIN</td>
+                                <td class='text-center'>
+                                    <a href='#' onclick='deleteRecord(1)' class ='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
+                                        <i class="fa-solid fa-trash fa-lg pe-none"></i>
+                                    </a> 
+                                    <a href='' class='btn btn-view m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='VIEW'>
+                                        <i class="fa-solid fa-eye fa-lg pe-none"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='text-center'>Sec01</td>
+                                <td class='text-center'>Vincent Felix</td>
+                                <td class='text-center'>Sabalza</td>
+                                <td class='text-center'>Cagara</td>
+                                <td class='text-center'>JR</td>
+                                <td class='text-center'>Male</td>
+                                <td class='text-center'>SECRETARY</td>
+                                <td class='text-center'>
+                                    <a href='#' onclick='deleteRecord(1)' class ='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
+                                        <i class="fa-solid fa-trash fa-lg pe-none"></i>
+                                    </a> 
+                                    <a href='' class='btn btn-view m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='VIEW'>
+                                        <i class="fa-solid fa-eye fa-lg pe-none"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='text-center'>Sec02</td>
+                                <td class='text-center'>Vincent Felix</td>
+                                <td class='text-center'>Sabalza</td>
+                                <td class='text-center'>Cagara</td>
+                                <td class='text-center'>JR</td>
+                                <td class='text-center'>Male</td>
+                                <td class='text-center'>SECRETARY</td>
+                                <td class='text-center'>
+                                    <a href='#' onclick='deleteRecord(1)' class ='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
+                                        <i class="fa-solid fa-trash fa-lg pe-none"></i>
+                                    </a> 
+                                    <a href='' class='btn btn-view m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='VIEW'>
+                                        <i class="fa-solid fa-eye fa-lg pe-none"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>  
             </main>
         </div>
     </div>
@@ -143,6 +226,39 @@
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!--Custom JS-->
+    <script type="text/javascript">
+        async function deleteRecord(clientNum) {
+            await Swal.fire({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this record!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            })
+            .then((willDelete) => {
+                if (willDelete.isConfirmed) {
+                    window.location.href = `delete.php?lrn=${clientNum}`;
+                } else {
+                    Swal.fire("CANCELED", "Record not deleted!", "info");
+                }
+            });
+        }
+
+        function validateSearch(input) {
+            var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>

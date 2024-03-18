@@ -141,7 +141,7 @@
                     <h1 class="fw-bold sub-title">DASHBOARD</h1>
                 </div>
                 <div class="row"  style="height: 100%;">
-                    <div class="col-4 d-flex justify-content-center align-items-center py-1">
+                    <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-yellow">
                             <div class="card-body">
                                 <h5 class="card-title">No. of Students:</h5>
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 d-flex justify-content-center align-items-center py-1">
+                    <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-navyblue">
                             <div class="card-body">
                                 <h5 class="card-title">No. of Programs:</h5>
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4 d-flex justify-content-center align-items-center py-1">
+                    <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-black">
                             <div class="card-body">
                                 <h5 class="card-title">No. of Papers:</h5>
@@ -171,18 +171,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                         <canvas id="graph1"></canvas>
-                        <!-- <p>LEGENDS:
-                            <small class="fw-bold" style="color: rgba(112,214,255,1.0);">STEM</small> -
-                            <small class="fw-bold" style="color: rgba(255,112,166,1.0);">HUMSS</small> -
-                            <small class="fw-bold" style="color: rgba(255,151,112,1.0);">ABM</small> -
-                            <small class="fw-bold" style="color: rgba(255,214,112,1.0);">GAS</small> -
-                            <small class="fw-bold" style="color: rgba(91,95,151,1.0);">TVL-ICT</small> -
-                            <small class="fw-bold" style="color: rgba(104,122,0,1.0);">TVL-HE</small>
-                        </p> -->
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                         <canvas id="graph2"></canvas>
                     </div>
                 </div>
