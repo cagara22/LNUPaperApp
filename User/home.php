@@ -92,12 +92,12 @@
                 <div class="row">
                     <div class="col-md-12 text-center mb-2" style="padding-bottom: 4rem;">
                         <h1 class="fw-bold" style="letter-spacing: 4px;">FIGURES</h1>
-                        <span style="font-style: italic;">Number of Research Papers created in each colleges</span> <br>
+                        <span class="" style="font-style: italic;">Number of Research Papers created in each colleges</span> <br>
                         <img src="images/home-line.png" alt="">
                     </div>
                 </div>
                 <div class="row" style="width:100%">
-                    <div class="col-12 col-lg-4 my-1">
+                    <div class="col-12 col-lg-4 mb-5">
                         <div class="text-center align-items-center">
                             <div class="card-body">
                                 <h1 class="card-title fw-bold py-2">2034</h5>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4 my-1">
+                    <div class="col-12 col-lg-4 mb-5">
                         <div class="text-center align-items-center">
                             <div class="card-body">
                                 <h1 class="card-title fw-bold py-2">2034</h5>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4 my-1">
+                    <div class="col-12 col-lg-4 mb-5">
                         <div class="text-center align-items-center">
                             <div class="card-body">
                                 <h1 class="card-title fw-bold py-2">2034</h5>
