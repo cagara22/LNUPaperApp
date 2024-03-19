@@ -24,6 +24,10 @@
   	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
   	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
+    <!--Chart JS-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="./assets/chartjs/dist/chart.umd.js"></script>
+
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="customcss.css">
 </head>
@@ -136,6 +140,114 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">REPORTS</h1>
                 </div>
+                <div class="row w-100 h-100">
+                    <div class="col-12 col-lg-9 d-flex justify-content-center align-items-start">
+                        <div class="row w-100 h-100">
+                            <div class="col-12 d-grid gap-2 d-flex justify-content-end">
+                                <div class="form-floating w-50">
+                                    <select class="form-select form-select-sm" id="programCollege" name="programCollege" value="" onchange="updateChart()">
+                                        <option value="coe" selected>COE</option>
+                                        <option value="cas" >CAS</option>
+                                        <option value="cme" >CME</option>
+                                    </select>
+                                    <label for="programCollege">College</label>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center align-items-start w-100">
+                                <canvas id="graph1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="row h-100">
+                            <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center">
+                                <canvas id="graph2"></canvas>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center">
+                                <canvas id="graph3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="" class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="program" name="program" value="">
+                                                <option value="" selected>BSIT</option>
+                                                <option value="" >BLIS</option>
+                                                <option value="" >GSIS</option>
+                                            </select>
+                                            <label for="program">College</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="college" name="college" value="">
+                                                <option value="" selected>COE</option>
+                                                <option value="" >CAS</option>
+                                                <option value="" >CME</option>
+                                            </select>
+                                            <label for="college">College</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="yearCreated" name="yearCreated" value="">
+                                                <option value="" selected>2021</option>
+                                                <option value="" >2022</option>
+                                                <option value="" >2023</option>
+                                            </select>
+                                            <label for="yearCreated">College</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end py-2">
+                                    <a class="btn btn-add fw-bold w-100" href="" role="button">GENERATE REPORT</a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">College</th>
+                                                <th scope="col">Program</th>
+                                                <th scope="col">Year Created</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-group-divider">
+                                            <tr>
+                                                <td class='text-center'>1</td>
+                                                <td class='text-center'>The Quick Brown Fox Jumps Over The Lazy Dog</td>
+                                                <td class='text-center'>CAS</td>
+                                                <td class='text-center'>BSIT</td>
+                                                <td class='text-center'>2024</td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-center'>1</td>
+                                                <td class='text-center'>The Quick Brown Fox Jumps Over The Lazy Dog</td>
+                                                <td class='text-center'>CAS</td>
+                                                <td class='text-center'>BSIT</td>
+                                                <td class='text-center'>2024</td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-center'>1</td>
+                                                <td class='text-center'>The Quick Brown Fox Jumps Over The Lazy Dog</td>
+                                                <td class='text-center'>CAS</td>
+                                                <td class='text-center'>BSIT</td>
+                                                <td class='text-center'>2024</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
@@ -143,6 +255,128 @@
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!--Custom JS-->
+	<script type="text/javascript">
+
+        var casLabels = ["BSIT", "BSBIO", "BLIS"];
+        var coeLabels = ["BSED SCI", "BEED"];
+        var cmeLabels = ["BSHM", "BSSS", "BSDS", "GSIS"]
+        var casValues = [1000, 2000, 1500];
+        var coeValues = [500, 600];
+        var cmeValues = [300, 600, 500, 800];
+
+        function updateChart() {
+            var selectElement = document.getElementById("programCollege");
+            var selectedCollege = selectElement.value;
+
+            var labels, values;
+
+            if (selectedCollege === "cas") {
+                labels = casLabels;
+                values = casValues;
+            } else if (selectedCollege === "coe") {
+                labels = coeLabels;
+                values = coeValues;
+            } else if (selectedCollege === "cme") {
+                labels = cmeLabels;
+                values = cmeValues;
+            }
+
+            // Get the chart instance
+            var chartInstance = Chart.getChart("graph1");
+
+            // Update chart data
+            chartInstance.data.labels = labels;
+            chartInstance.data.datasets[0].data = values;
+            chartInstance.update();
+        }
+
+        var barColors = [
+            "rgba(214,167,61,1.0)",
+            "rgba(7,17,96,1.0)",
+            "rgba(41,41,41,1.0)"
+        ];
+
+        new Chart("graph1", {
+            type: "bar",
+            data: {
+                labels: coeLabels,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: coeValues
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        font:{
+                            size: 20,
+                            weight: "bolder"
+                        },
+                        text: "Total Number of Papers per Programs"
+                    }
+                }
+            }
+        });
+
+        var labels = ["COE", "CAS", "CME"]
+
+        var studentValues = [100, 200, 300];
+        var papaersValues = [500, 1200, 1500];
+
+        new Chart("graph2", {
+            type: "pie",
+            data: {
+                labels: labels,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: studentValues
+                }]
+            },
+            options: {
+                plugins:{
+                    title: {
+                        display: true,
+                        padding: 5,
+                        text: "Total number of Student users per College"
+                    },
+                    legend: {
+                        display: true,
+                        position: "right"
+                    }
+                }
+            }
+        });
+
+        new Chart("graph3", {
+            type: "doughnut",
+            data: {
+                labels: labels,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: papaersValues
+                }]
+            },
+            options: {
+                plugins:{
+                    title: {
+                        display: true,
+                        padding: 5,
+                        text: "Total number of Papers per College"
+                    },
+                    legend: {
+                        display: true,
+                        position: "right"
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

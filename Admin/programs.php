@@ -24,6 +24,9 @@
   	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
   	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
+    <!--SweetAlert2-->
+    <script src="./assets/sweetalert2/sweetalert2.all.js"></script>
+
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="customcss.css">
 </head>
@@ -136,6 +139,82 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">PROGRAMS</h1>
                 </div>
+                <div class="row w-100">
+                    <div class="col-12 col-lg-8 order-2 order-lg-1">
+                        <form class="row g-3" method="GET" action="">
+                            <div class="col-8 col-lg-9">
+                                <input type="text" class="form-control" id="searchname" name="searchname" oninput="validateSearch(this)" placeholder="Search...">
+                            </div>
+                            <div class="col-4 col-lg-3">
+                                <button type="submit" class="btn btn-search w-100 fw-bold" name="search">SEARCH</button>
+                            </div>
+                        </form>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col">Shorthand Name</th>
+                                        <th scope="col">Full Name</th>
+                                        <th scope="col">College</th>
+                                        <th scope="col" colspan="2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                    <tr>
+                                        <td class='text-center'>BSIT</td>
+                                        <td class='text-center'>Bachelor of Science in Information Technology</td>
+                                        <td class='text-center'>CAS</td>
+                                        <td class='text-center'>
+                                            <a href='#' onclick='deleteRecord(1)' class ='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
+                                                <i class="fa-solid fa-trash fa-lg pe-none"></i>
+                                            </a> 
+                                            <a href='' class='btn btn-view m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='VIEW'>
+                                                <i class="fa-solid fa-eye fa-lg pe-none"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 order-1 order-lg-2 mb-4">
+                        <div class="card custcard border-light text-center" style="width: 100%;">
+                            <div class="card-header">
+                                <h4 class="fw-bold card-text-header">Program Details</h4>
+                            </div>
+                            <div class="card-body">
+                                <form class="row" action="" method="">
+                                    <input type="hidden" name="collegeID" id="collegeID" value="">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="programFullName" name="programFullName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
+                                            <label for="programFullName">Program's Full Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="programShortName" name="programShortName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
+                                            <label for="programShortName">Shorthand Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-12 mb-1">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="programCollege" name="programCollege" value="">
+                                                <option value="" selected>COE</option>
+                                                <option value="" >CAS</option>
+                                                <option value="" >CME</option>
+                                            </select>
+                                            <label for="programCollege">College</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-end">
+                                        <button type="submit" name="updateBtn" class="btn btn-update form-button-text"><span class="fw-bold">UPDATE</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
@@ -143,6 +222,47 @@
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!--Custom JS-->
+    <script type="text/javascript">
+        async function deleteRecord(clientNum) {
+            await Swal.fire({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this record!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            })
+            .then((willDelete) => {
+                if (willDelete.isConfirmed) {
+                    window.location.href = `delete.php?lrn=${clientNum}`;
+                } else {
+                    Swal.fire("CANCELED", "Record not deleted!", "info");
+                }
+            });
+        }
+
+        function validateSearch(input) {
+            var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+
+        function validateText(input) {
+            var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>
