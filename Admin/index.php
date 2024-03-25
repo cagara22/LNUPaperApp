@@ -7,13 +7,13 @@
 	<title>LNU Paper App</title>
 
 	<!--Header Icon-->
-    <link rel="icon" type="images/x-icon" href="" />
+	<link rel="icon" type="images/x-icon" href="" />
 
-    <!--Bootstrap CSS-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+	<!--Bootstrap CSS-->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
 
-    <!--Google Fonts API-->
+	<!--Google Fonts API-->
 	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
@@ -21,8 +21,8 @@
 	<!--FontAwesome Icons-->
 	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
 	<link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
+	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="customcss.css">
@@ -48,10 +48,12 @@
 					</div>
 					<div class="card-body">
 						<form action="" method="post">
+
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="username" name="username" oninput="validateUsername(this)" placeholder="username01" required>
 								<label for="username">USERNAME</label>
 							</div>
+
 							<div class="input-group mb-3">
 								<div class="form-floating">
 									<input type="password" class="form-control" id="password" name="password" placeholder="password" required>
@@ -81,6 +83,7 @@
 
 	<!--Custom JS-->
 	<script type="text/javascript">
+		// Username Filter---------------------------------------
 		function validateUsername(input) {
 			var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -88,7 +91,9 @@
 				input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
 			}
 		}
+		// ------------------------------------------------------
 
+		// Password Show Hide Function---------------------------
 		function password_show_hide() {
 			var x = document.getElementById("password");
 			var show_eye = document.getElementById("show_eye");
@@ -104,6 +109,7 @@
 				hide_eye.style.display = "none";
 			}
 		}
+		// ------------------------------------------------------
 	</script>
 </body>
 

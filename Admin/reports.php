@@ -11,25 +11,25 @@
 
     <!--Bootstrap CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
 
     <!--Google Fonts API-->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
-	<!--FontAwesome Icons-->
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
-	<link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <!--FontAwesome Icons-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
+    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <!--Chart JS-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="./assets/chartjs/dist/chart.umd.js"></script>
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="customcss.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="customcss.css">
 </head>
 
 <body>
@@ -141,6 +141,7 @@
                     <h1 class="fw-bold sub-title">REPORTS</h1>
                 </div>
                 <div class="row w-100 h-100">
+
                     <div class="col-12 col-lg-9 d-flex justify-content-center align-items-start" id="cust-height">
                         <div class="row w-100 h-100">
                             <div class="col-12">
@@ -149,8 +150,8 @@
                                         <div class="form-floating">
                                             <select class="form-select form-select-sm" id="programCollege" name="programCollege" value="" onchange="updateChart()">
                                                 <option value="coe" selected>COE</option>
-                                                <option value="cas" >CAS</option>
-                                                <option value="cme" >CME</option>
+                                                <option value="cas">CAS</option>
+                                                <option value="cme">CME</option>
                                             </select>
                                             <label for="programCollege">College</label>
                                         </div>
@@ -162,20 +163,25 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-lg-3">
                         <div class="row h-100">
+
                             <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center">
                                 <canvas id="graph2"></canvas>
                             </div>
+
                             <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center align-items-center">
                                 <canvas id="graph3"></canvas>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12">
                                 <form action="" class="row">
+
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="college" name="college" value="" onchange="updateProgramOptions()" required>
@@ -187,21 +193,23 @@
                                             <label for="college">COLLEGE</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-sm-6">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="program" name="program" value="" required disabled>
                                                 <option value="ALL" selected>ALL</option>
-                                                
+
                                             </select>
                                             <label for="program">PROGRAM</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="yearCreated" name="yearCreated" value="">
                                                 <option value="" selected>2021</option>
-                                                <option value="" >2022</option>
-                                                <option value="" >2023</option>
+                                                <option value="">2022</option>
+                                                <option value="">2023</option>
                                             </select>
                                             <label for="yearCreated">YEAR</label>
                                         </div>
@@ -261,8 +269,8 @@
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
 
     <!--Custom JS-->
-	<script type="text/javascript">
-
+    <script type="text/javascript">
+        // Program Select Functionality--------------------------
         function updateProgramOptions() {
             var collegeSelect = document.getElementById("college");
             var programSelect = document.getElementById("program");
@@ -314,7 +322,9 @@
             option.text = value;
             selectElement.appendChild(option);
         }
+        // ------------------------------------------------------
 
+        // Chart Filter Functionality----------------------------
         var casLabels = ["BSIT", "BSBIO", "BLIS"];
         var coeLabels = ["BSED SCI", "BEED"];
         var cmeLabels = ["BSHM", "BSSS", "BSDS", "GSIS"]
@@ -347,7 +357,9 @@
             chartInstance.data.datasets[0].data = values;
             chartInstance.update();
         }
+        // ------------------------------------------------------
 
+        // Bar Graph---------------------------------------------
         var barColors = [
             "rgba(214,167,61,1.0)",
             "rgba(7,17,96,1.0)",
@@ -370,7 +382,7 @@
                     },
                     title: {
                         display: true,
-                        font:{
+                        font: {
                             size: 15,
                             weight: "bolder"
                         },
@@ -379,7 +391,9 @@
                 }
             }
         });
+        // ------------------------------------------------------
 
+        //Pie Chart----------------------------------------------
         var labels = ["COE", "CAS", "CME"]
 
         var studentValues = [100, 200, 300];
@@ -395,7 +409,7 @@
                 }]
             },
             options: {
-                plugins:{
+                plugins: {
                     title: {
                         display: true,
                         padding: 5,
@@ -408,7 +422,9 @@
                 }
             }
         });
+        // ------------------------------------------------------
 
+        // Doughnut Chart----------------------------------------
         new Chart("graph3", {
             type: "doughnut",
             data: {
@@ -419,7 +435,7 @@
                 }]
             },
             options: {
-                plugins:{
+                plugins: {
                     title: {
                         display: true,
                         padding: 5,
@@ -432,6 +448,7 @@
                 }
             }
         });
+        // ------------------------------------------------------
     </script>
 </body>
 

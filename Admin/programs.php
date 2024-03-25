@@ -11,24 +11,24 @@
 
     <!--Bootstrap CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
 
     <!--Google Fonts API-->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
-	<!--FontAwesome Icons-->
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
-	<link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <!--FontAwesome Icons-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
+    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <!--SweetAlert2-->
     <script src="./assets/sweetalert2/sweetalert2.all.js"></script>
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="customcss.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="customcss.css">
 </head>
 
 <body>
@@ -165,9 +165,9 @@
                                         <td class='text-center'>Bachelor of Science in Information Technology</td>
                                         <td class='text-center'>CAS</td>
                                         <td class='text-center'>
-                                            <a href='#' onclick='deleteRecord(1)' class ='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
+                                            <a href='#' onclick='deleteRecord(1)' class='btn btn-delete m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='DELETE'>
                                                 <i class="fa-solid fa-trash fa-lg pe-none"></i>
-                                            </a> 
+                                            </a>
                                             <a href='' class='btn btn-view m-1' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='VIEW'>
                                                 <i class="fa-solid fa-eye fa-lg pe-none"></i>
                                             </a>
@@ -184,30 +184,35 @@
                             </div>
                             <div class="card-body">
                                 <form class="row needs-validation" action="" method="" novalidate>
+
                                     <input type="hidden" name="" id="" value="">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="programFullName" name="programFullName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
                                             <label for="programFullName">Program's Full Name</label>
                                         </div>
                                     </div>
+
                                     <div class="col-6 col-lg-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="programShortName" name="programShortName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
                                             <label for="programShortName">Shorthand Name</label>
                                         </div>
                                     </div>
+
                                     <div class="col-6 col-lg-12 mb-1">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="programCollege" name="programCollege" value="" required>
                                                 <option value="" selected disabled>Select a college...</option>
-                                                <option value="" >COE</option>
-                                                <option value="" >CAS</option>
-                                                <option value="" >CME</option>
+                                                <option value="">COE</option>
+                                                <option value="">CAS</option>
+                                                <option value="">CME</option>
                                             </select>
                                             <label for="programCollege">College</label>
                                         </div>
                                     </div>
+
                                     <div class="d-grid gap-2 d-md-flex justify-content-end">
                                         <button type="submit" name="updateBtn" class="btn btn-update form-button-text"><span class="fw-bold">UPDATE</span></button>
                                     </div>
@@ -226,25 +231,28 @@
 
     <!--Custom JS-->
     <script type="text/javascript">
+        // Delete Confirmation Alert-----------------------------
         async function deleteRecord(clientNum) {
             await Swal.fire({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this record!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            })
-            .then((willDelete) => {
-                if (willDelete.isConfirmed) {
-                    window.location.href = `delete.php?lrn=${clientNum}`;
-                } else {
-                    Swal.fire("CANCELED", "Record not deleted!", "info");
-                }
-            });
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this record!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                })
+                .then((willDelete) => {
+                    if (willDelete.isConfirmed) {
+                        window.location.href = `delete.php?lrn=${clientNum}`;
+                    } else {
+                        Swal.fire("CANCELED", "Record not deleted!", "info");
+                    }
+                });
         }
+        // ------------------------------------------------------
 
+        // Bootstrap Form Validation----------------------------
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
@@ -259,7 +267,9 @@
                 form.classList.add('was-validated')
             }, false)
         })
+        // ------------------------------------------------------
 
+        // Search Filter-----------------------------------------
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -267,7 +277,9 @@
                 input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Text Filter-------------------------------------------
         function validateText(input) {
             var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -275,6 +287,7 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

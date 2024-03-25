@@ -11,21 +11,21 @@
 
     <!--Bootstrap CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
 
     <!--Google Fonts API-->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
-	<!--FontAwesome Icons-->
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
-	<link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <!--FontAwesome Icons-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
+    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="customcss.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="customcss.css">
 </head>
 
 <body>
@@ -143,38 +143,45 @@
                     </div>
                     <div class="card-body">
                         <form class="row needs-validation" action="" method="" novalidate>
+
                             <input type="hidden" name="" id="" value="">
+
                             <div class="col-12">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="username" name="username" placeholder="" oninput="validateUsername(this)" required>
                                     <label for="username">USERNAME</label>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" oninput="validateText(this)" required>
                                     <label for="firstName">FIRST NAME</label>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="middleName" name="middleName" placeholder="" oninput="validateText(this)">
                                     <label for="middleName">MIDDLE NAME</label>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" oninput="validateText(this)" required>
                                     <label for="lastName">LAST NAME</label>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="suffix" name="suffix" placeholder="" oninput="validateText(this)">
                                     <label for="suffix">SUFFIX</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+
+                            <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="role" name="role" value="" required>
                                         <option value="" selected disabled>Select a role...</option>
@@ -184,6 +191,7 @@
                                     <label for="role">ROLE</label>
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6">
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="college" name="college" value="" required>
@@ -196,17 +204,7 @@
                                     <label for="college">COLLEGE</label>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="program" name="program" value="" required>
-                                        <option value="" selected disabled>Select a Program...</option>
-                                        <option value="">BSIT</option>
-                                        <option value="">BLIS</option>
-                                        <option value="">GSIS</option>
-                                    </select>
-                                    <label for="program">PROGRAM</label>
-                                </div>
-                            </div>
+
                             <div class="col-12 col-md-6 mb-1">
                                 <div class="input-group mb-1">
                                     <div class="form-floating">
@@ -224,6 +222,7 @@
 
                                 </div>
                             </div>
+
                             <div class="col-12 col-md-6 mb-1">
                                 <div class="input-group mb-1">
                                     <div class="form-floating">
@@ -238,6 +237,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="d-grid gap-2 d-md-flex justify-content-end">
                                 <button type="submit" name="updateBtn" class="btn btn-update form-button-text"><span class="fw-bold">UPDATE</span></button>
                             </div>
@@ -262,6 +262,7 @@
 
     <!--Custom JS-->
     <script type="text/javascript">
+        // Bootstrap Form Validation----------------------------
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
@@ -276,7 +277,9 @@
                 form.classList.add('was-validated')
             }, false)
         })
+        // ------------------------------------------------------
 
+        // Password Stregth Meter--------------------------------
         $(document).ready(function() {
             $('#password').strengthMeter('text', {
                 container: $('#passstrength'),
@@ -291,15 +294,19 @@
                 }
             });
         });
+        // ------------------------------------------------------
 
+        // Username Filter---------------------------------------
         function validateUsername(input) {
-			var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+            var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
-			if (!regex.test(input.value)) {
-				input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
-			}
-		}
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+        // ------------------------------------------------------
 
+        // Text Filter-------------------------------------------
         function validateText(input) {
             var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -307,38 +314,43 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Password Show Functionality---------------------------
         function password_show_hide() {
-			var x = document.getElementById("password");
-			var show_eye = document.getElementById("show_eye1");
-			var hide_eye = document.getElementById("hide_eye1");
-			hide_eye.classList.remove("d-none");
-			if (x.type === "password") {
-				x.type = "text";
-				show_eye.style.display = "none";
-				hide_eye.style.display = "block";
-			} else {
-				x.type = "password";
-				show_eye.style.display = "block";
-				hide_eye.style.display = "none";
-			}
-		}
+            var x = document.getElementById("password");
+            var show_eye = document.getElementById("show_eye1");
+            var hide_eye = document.getElementById("hide_eye1");
+            hide_eye.classList.remove("d-none");
+            if (x.type === "password") {
+                x.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                x.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+            }
+        }
+        // ------------------------------------------------------
 
-		function cpassword_show_hide() {
-			var x = document.getElementById("cpassword");
-			var show_eye = document.getElementById("show_eye2");
-			var hide_eye = document.getElementById("hide_eye2");
-			hide_eye.classList.remove("d-none");
-			if (x.type === "password") {
-				x.type = "text";
-				show_eye.style.display = "none";
-				hide_eye.style.display = "block";
-			} else {
-				x.type = "password";
-				show_eye.style.display = "block";
-				hide_eye.style.display = "none";
-			}
-		}
+        // Confirm Password Show Functionality-------------------
+        function cpassword_show_hide() {
+            var x = document.getElementById("cpassword");
+            var show_eye = document.getElementById("show_eye2");
+            var hide_eye = document.getElementById("hide_eye2");
+            hide_eye.classList.remove("d-none");
+            if (x.type === "password") {
+                x.type = "text";
+                show_eye.style.display = "none";
+                hide_eye.style.display = "block";
+            } else {
+                x.type = "password";
+                show_eye.style.display = "block";
+                hide_eye.style.display = "none";
+            }
+        }
+        // ------------------------------------------------------
 
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

@@ -11,25 +11,25 @@
 
     <!--Bootstrap CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
 
     <!--Google Fonts API-->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> -->
 
-	<!--FontAwesome Icons-->
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
-	<link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
-  	<link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <!--FontAwesome Icons-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" /> -->
+    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <!--Chart JS-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="./assets/chartjs/dist/chart.umd.js"></script>
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="customcss.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="customcss.css">
 </head>
 
 <body>
@@ -140,7 +140,8 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">DASHBOARD</h1>
                 </div>
-                <div class="row"  style="height: 100%;">
+                <div class="row" style="height: 100%;">
+
                     <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-yellow">
                             <div class="card-body">
@@ -151,6 +152,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-navyblue">
                             <div class="card-body">
@@ -161,6 +163,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center p-1">
                         <div class="card w-100 text-bg-black">
                             <div class="card-body">
@@ -171,9 +174,11 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                         <canvas id="graph1"></canvas>
                     </div>
+
                     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                         <canvas id="graph2"></canvas>
                     </div>
@@ -187,7 +192,8 @@
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
 
     <!--Custom JS-->
-	<script type="text/javascript">
+    <script type="text/javascript">
+        // Line Graph---------------------------------------------
         var years = ['0', '2022', '2023', '2024', '2025', '2026'];
         var coe = [0, 100, 200, 300, 200, 300];
         var cas = [0, 90, 100, 150, 250, 200];
@@ -223,7 +229,9 @@
                 }
             }
         });
+        // ------------------------------------------------------
 
+        // Bar Graph---------------------------------------------
         var labels = ["COE", "CAS", "CME"];
         var values = [1000, 2000, 1500];
         var barColors = [
@@ -253,6 +261,7 @@
                 }
             }
         });
+        // ------------------------------------------------------
     </script>
 </body>
 

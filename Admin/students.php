@@ -160,37 +160,44 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
+
                                     <input type="hidden" name="" id="" value="">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="studentID" name="studentID" placeholder="" oninput="validateID(this)" required>
                                             <label for="studentID">STUDENT ID</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" oninput="validateText(this)" required>
                                             <label for="firstName">FIRST NAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="middleName" name="middleName" placeholder="" oninput="validateText(this)">
                                             <label for="middleName">MIDDLE NAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" oninput="validateText(this)" required>
                                             <label for="lastName">LAST NAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="suffix" name="suffix" placeholder="" oninput="validateText(this)">
                                             <label for="suffix">SUFFIX</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="college" name="college" value="" onchange="updateProgramOptions()" required>
@@ -202,15 +209,17 @@
                                             <label for="college">COLLEGE</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="program" name="program" value="" required disabled>
                                                 <option value="" selected disabled>Select a Program...</option>
-                                                
+
                                             </select>
                                             <label for="program">PROGRAM</label>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -300,6 +309,7 @@
 
     <!--Custom JS-->
     <script type="text/javascript">
+        // Bootstrap Form Validation----------------------------
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
@@ -314,8 +324,9 @@
                 form.classList.add('was-validated')
             }, false)
         })
+        // ------------------------------------------------------
 
-
+        // Delete Confirmation Alert-----------------------------
         async function deleteRecord(clientNum) {
             await Swal.fire({
                     title: "Are you sure?",
@@ -334,7 +345,9 @@
                     }
                 });
         }
+        // ------------------------------------------------------
 
+        // Search Filter-----------------------------------------
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -342,7 +355,9 @@
                 input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Student Filter-------------------------------------------
         function validateID(input) {
             var regex = /^[0-9]*$/; // Regular expression to allow only numbers
 
@@ -354,7 +369,9 @@
                 input.value = input.value.slice(0, 7); // Truncate the input value to 7 characters if it exceeds the limit
             }
         }
+        // ------------------------------------------------------
 
+        // Text Filter-------------------------------------------
         function validateText(input) {
             var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -362,7 +379,9 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Program Select Functionality--------------------------
         function updateProgramOptions() {
             var collegeSelect = document.getElementById("college");
             var programSelect = document.getElementById("program");
@@ -404,6 +423,7 @@
             option.text = value;
             selectElement.appendChild(option);
         }
+        // ------------------------------------------------------
 
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

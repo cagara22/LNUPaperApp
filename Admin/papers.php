@@ -160,13 +160,16 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
+
                                     <input type="hidden" name="" id="" value="">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="paperTitle" name="paperTitle" placeholder="" oninput="validateText(this)" required>
                                             <label for="paperTitle">TITLE</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-4">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="college" name="college" value="" onchange="updateProgramOptions()" required>
@@ -178,15 +181,17 @@
                                             <label for="college">COLLEGE</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-4">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="program" name="program" value="" required disabled>
                                                 <option value="" selected disabled>Select a Program...</option>
-                                                
+
                                             </select>
                                             <label for="program">PROGRAM</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-2">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="monthSelect" name="month" onchange="validateSelect(this)" required>
@@ -318,6 +323,7 @@
 
     <!--Custom JS-->
     <script type="text/javascript">
+        // Bootstrap Form Validation-----------------------------
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
@@ -332,7 +338,9 @@
                 form.classList.add('was-validated')
             }, false)
         })
+        // ------------------------------------------------------
 
+        // Delete Confirmation Alert-----------------------------
         async function deleteRecord(clientNum) {
             await Swal.fire({
                     title: "Are you sure?",
@@ -351,7 +359,9 @@
                     }
                 });
         }
+        // ------------------------------------------------------
 
+        // Search Filter-----------------------------------------
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -359,7 +369,9 @@
                 input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Title Filter-------------------------------------------
         function validateTitle(input) {
             var regex = /^[a-zA-Z\sñÑ'"-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -367,7 +379,9 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ'"-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Text Filter-------------------------------------------
         function validateText(input) {
             var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -375,7 +389,9 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Year Filter-------------------------------------------
         function validateYear(input) {
             var regex = /^[0-9]*$/; // Regular expression to allow only numbers
 
@@ -384,10 +400,12 @@
             }
 
             if (input.value.length > 4) {
-                input.value = input.value.slice(0, 4); // Truncate the input value to 7 characters if it exceeds the limit
+                input.value = input.value.slice(0, 4); // Truncate the input value to 4 characters if it exceeds the limit
             }
         }
+        // ------------------------------------------------------
 
+        // Program Select Functionality--------------------------
         function updateProgramOptions() {
             var collegeSelect = document.getElementById("college");
             var programSelect = document.getElementById("program");
@@ -429,6 +447,7 @@
             option.text = value;
             selectElement.appendChild(option);
         }
+        // ------------------------------------------------------
 
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

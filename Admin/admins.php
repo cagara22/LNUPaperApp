@@ -160,37 +160,44 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
+
                                     <input type="hidden" name="" id="" value="">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="username" name="username" placeholder="" oninput="validateUsername(this)" required>
                                             <label for="username">USERNAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" oninput="validateText(this)" required>
                                             <label for="firstName">FIRST NAME</label>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="middleName" name="middleName" placeholder="" oninput="validateText(this)">
                                             <label for="middleName">MIDDLE NAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" oninput="validateText(this)" required>
                                             <label for="lastName">LAST NAME</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="suffix" name="suffix" placeholder="" oninput="validateText(this)">
                                             <label for="suffix">SUFFIX</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="role" name="role" value="" onchange="updateRoleOptions()" required>
@@ -201,6 +208,7 @@
                                             <label for="role">ROLE</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12 col-md-6">
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="college" name="college" value="" required disabled>
@@ -213,6 +221,7 @@
                                             <label for="college">COLLEGE</label>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -302,6 +311,7 @@
 
     <!--Custom JS-->
     <script type="text/javascript">
+        // Bootstrap Form Validation----------------------------
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
@@ -316,7 +326,9 @@
                 form.classList.add('was-validated')
             }, false)
         })
+        // ------------------------------------------------------
 
+        // Delete Confirmation Alert-----------------------------
         async function deleteRecord(clientNum) {
             await Swal.fire({
                     title: "Are you sure?",
@@ -335,7 +347,9 @@
                     }
                 });
         }
+        // ------------------------------------------------------
 
+        // Search Filter-----------------------------------------
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -343,7 +357,9 @@
                 input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Username Filter---------------------------------------
         function validateUsername(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -351,7 +367,9 @@
                 input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Text Filter-------------------------------------------
         function validateText(input) {
             var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
 
@@ -359,7 +377,9 @@
                 input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
             }
         }
+        // ------------------------------------------------------
 
+        // Role Select Functionality-----------------------------
         function updateRoleOptions() {
             var roleSelect = document.getElementById("role");
             var collegeSelect = document.getElementById("college");
@@ -385,6 +405,7 @@
                 programSelect.disabled = false;
             }
         }
+        // ------------------------------------------------------
 
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
