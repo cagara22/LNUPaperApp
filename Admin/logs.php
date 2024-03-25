@@ -136,6 +136,46 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">LOGS</h1>
                 </div>
+                <form class="row g-3" method="GET" action="">
+                    <div class="col-8 col-lg-10">
+                        <input type="text" class="form-control" id="searchname" name="searchname" oninput="validateSearch(this)" placeholder="Search...">
+                    </div>
+                    <div class="col-4 col-lg-2">
+                        <button type="submit" class="btn btn-search w-100 fw-bold" name="search">SEARCH</button>
+                    </div>
+                </form>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Timestamp</th>
+                                <th scope="col">Action</th>
+                                <th scope="col">Details</th>
+                                <th scope="col">User</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td class='text-center'>00:00:00 00/00/00</td>
+                                <td class='text-center'>ADDED</td>
+                                <td class='text-center'>A new paper was added by chu chu chu chu chu chu chu</td>
+                                <td class='text-center'>Admin01</td>
+                            </tr>
+                            <tr>
+                                <td class='text-center'>00:00:00 00/00/00</td>
+                                <td class='text-center'>ADDED</td>
+                                <td class='text-center'>A new paper was added by chu chu chu chu chu chu chu</td>
+                                <td class='text-center'>Admin01</td>
+                            </tr>
+                            <tr>
+                                <td class='text-center'>00:00:00 00/00/00</td>
+                                <td class='text-center'>ADDED</td>
+                                <td class='text-center'>A new paper was added by chu chu chu chu chu chu chu</td>
+                                <td class='text-center'>Admin01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
@@ -143,6 +183,17 @@
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!--Custom JS-->
+    <script type="text/javascript">
+        function validateSearch(input) {
+            var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+    </script>
 </body>
 
 </html>

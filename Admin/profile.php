@@ -134,7 +134,115 @@
 
             <main class="d-flex flex-column col-md-9 ms-sm-auto col-lg-10 px-md-4 section-100">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
-                    <h1 class="fw-bold sub-title">PROFILE</h1>
+                    <h1 class="fw-bold sub-title">Hi Vincent Felix!</h1>
+                </div>
+
+                <div class="card custcard border-light text-center" style="width: 100%;">
+                    <div class="card-header">
+                        <h4 class="fw-bold card-text-header">Admin Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="row needs-validation" action="" method="" novalidate>
+                            <input type="hidden" name="" id="" value="">
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="" oninput="validateUsername(this)" required>
+                                    <label for="username">USERNAME</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" oninput="validateText(this)" required>
+                                    <label for="firstName">FIRST NAME</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="" oninput="validateText(this)">
+                                    <label for="middleName">MIDDLE NAME</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" oninput="validateText(this)" required>
+                                    <label for="lastName">LAST NAME</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="suffix" name="suffix" placeholder="" oninput="validateText(this)">
+                                    <label for="suffix">SUFFIX</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="role" name="role" value="" required>
+                                        <option value="" selected disabled>Select a role...</option>
+                                        <option value="">ADMIN</option>
+                                        <option value="">SECRETARY</option>
+                                    </select>
+                                    <label for="role">ROLE</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="college" name="college" value="" required>
+                                        <option value="" selected disabled>Select a college...</option>
+                                        <option value="">ALL</option>
+                                        <option value="">COE</option>
+                                        <option value="">CAS</option>
+                                        <option value="">CME</option>
+                                    </select>
+                                    <label for="college">COLLEGE</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="program" name="program" value="" required>
+                                        <option value="" selected disabled>Select a Program...</option>
+                                        <option value="">BSIT</option>
+                                        <option value="">BLIS</option>
+                                        <option value="">GSIS</option>
+                                    </select>
+                                    <label for="program">PROGRAM</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-1">
+                                <div class="input-group mb-1">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                        <label for="password">PASSWORD</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="height: 58px;" onclick="password_show_hide();">
+                                            <i class="fas fa-eye" id="show_eye1"></i>
+                                            <i class="fas fa-eye-slash d-none" id="hide_eye1"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" id="passstrength" style="font-weight:bold;padding:6px 12px;">
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 mb-1">
+                                <div class="input-group mb-1">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                                        <label for="cpassword">CONFIRM PASSWORD</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="height: 58px;" onclick="cpassword_show_hide();">
+                                            <i class="fas fa-eye" id="show_eye2"></i>
+                                            <i class="fas fa-eye-slash d-none" id="hide_eye2"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-end">
+                                <button type="submit" name="updateBtn" class="btn btn-update form-button-text"><span class="fw-bold">UPDATE</span></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </main>
         </div>
@@ -143,6 +251,98 @@
     <!--Bootstrap JS-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
     <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!--JQuery-->
+    <script type="text/javascript" src="./assets/jquery/jquery-3.7.1.min.js"></script>
+
+    <!--Password Strength Meter-->
+    <script type="text/javascript" src="./assets/passstrength/password-score.js"></script>
+    <script type="text/javascript" src="./assets/passstrength/password-score-options.js"></script>
+    <script type="text/javascript" src="./assets/passstrength/bootstrap-strength-meter.js"></script>
+
+    <!--Custom JS-->
+    <script type="text/javascript">
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+
+        $(document).ready(function() {
+            $('#password').strengthMeter('text', {
+                container: $('#passstrength'),
+                hierarchy: {
+                    '0': ['text-danger', ' '],
+                    '1': ['text-danger', 'Very Weak'],
+                    '25': ['text-danger', 'Weak'],
+                    '50': ['text-warning', 'Moderate'],
+                    '75': ['text-warning', 'Good'],
+                    '100': ['text-success', 'Strong'],
+                    '125': ['text-success', 'Very Strong']
+                }
+            });
+        });
+
+        function validateUsername(input) {
+			var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+			if (!regex.test(input.value)) {
+				input.value = input.value.replace(/[^a-zA-Z0-9\sñÑ-]/g, ''); // Remove any special characters
+			}
+		}
+
+        function validateText(input) {
+            var regex = /^[a-zA-Z\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces
+
+            if (!regex.test(input.value)) {
+                input.value = input.value.replace(/[^a-zA-Z\sñÑ-]/g, ''); // Remove any special characters
+            }
+        }
+
+        function password_show_hide() {
+			var x = document.getElementById("password");
+			var show_eye = document.getElementById("show_eye1");
+			var hide_eye = document.getElementById("hide_eye1");
+			hide_eye.classList.remove("d-none");
+			if (x.type === "password") {
+				x.type = "text";
+				show_eye.style.display = "none";
+				hide_eye.style.display = "block";
+			} else {
+				x.type = "password";
+				show_eye.style.display = "block";
+				hide_eye.style.display = "none";
+			}
+		}
+
+		function cpassword_show_hide() {
+			var x = document.getElementById("cpassword");
+			var show_eye = document.getElementById("show_eye2");
+			var hide_eye = document.getElementById("hide_eye2");
+			hide_eye.classList.remove("d-none");
+			if (x.type === "password") {
+				x.type = "text";
+				show_eye.style.display = "none";
+				hide_eye.style.display = "block";
+			} else {
+				x.type = "password";
+				show_eye.style.display = "block";
+				hide_eye.style.display = "none";
+			}
+		}
+
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>

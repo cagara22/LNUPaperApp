@@ -141,16 +141,20 @@
                     <h1 class="fw-bold sub-title">REPORTS</h1>
                 </div>
                 <div class="row w-100 h-100">
-                    <div class="col-12 col-lg-9 d-flex justify-content-center align-items-start">
+                    <div class="col-12 col-lg-9 d-flex justify-content-center align-items-start" id="cust-height">
                         <div class="row w-100 h-100">
-                            <div class="col-12 d-grid gap-2 d-flex justify-content-end">
-                                <div class="form-floating w-50">
-                                    <select class="form-select form-select-sm" id="programCollege" name="programCollege" value="" onchange="updateChart()">
-                                        <option value="coe" selected>COE</option>
-                                        <option value="cas" >CAS</option>
-                                        <option value="cme" >CME</option>
-                                    </select>
-                                    <label for="programCollege">College</label>
+                            <div class="col-12">
+                                <div class="row d-flex justify-content-end">
+                                    <div class="col-6 col-lg-3">
+                                        <div class="form-floating">
+                                            <select class="form-select form-select-sm" id="programCollege" name="programCollege" value="" onchange="updateChart()">
+                                                <option value="coe" selected>COE</option>
+                                                <option value="cas" >CAS</option>
+                                                <option value="cme" >CME</option>
+                                            </select>
+                                            <label for="programCollege">College</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-center align-items-start w-100">
@@ -172,24 +176,24 @@
                         <div class="row">
                             <div class="col-12">
                                 <form action="" class="row">
-                                    <div class="col-12 col-sm-6">
-                                        <div class="form-floating mb-3">
-                                            <select class="form-select" id="program" name="program" value="">
-                                                <option value="" selected>BSIT</option>
-                                                <option value="" >BLIS</option>
-                                                <option value="" >GSIS</option>
-                                            </select>
-                                            <label for="program">College</label>
-                                        </div>
-                                    </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" id="college" name="college" value="">
-                                                <option value="" selected>COE</option>
-                                                <option value="" >CAS</option>
-                                                <option value="" >CME</option>
+                                            <select class="form-select" id="college" name="college" value="" onchange="updateProgramOptions()" required>
+                                                <option value="ALL" selected>ALL</option>
+                                                <option value="COE">COE</option>
+                                                <option value="CAS">CAS</option>
+                                                <option value="CME">CME</option>
                                             </select>
-                                            <label for="college">College</label>
+                                            <label for="college">COLLEGE</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="program" name="program" value="" required disabled>
+                                                <option value="ALL" selected>ALL</option>
+                                                
+                                            </select>
+                                            <label for="program">PROGRAM</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-3">
@@ -199,7 +203,7 @@
                                                 <option value="" >2022</option>
                                                 <option value="" >2023</option>
                                             </select>
-                                            <label for="yearCreated">College</label>
+                                            <label for="yearCreated">YEAR</label>
                                         </div>
                                     </div>
                                 </form>
@@ -259,6 +263,58 @@
     <!--Custom JS-->
 	<script type="text/javascript">
 
+        function updateProgramOptions() {
+            var collegeSelect = document.getElementById("college");
+            var programSelect = document.getElementById("program");
+            var selectedCollege = collegeSelect.value;
+
+            // Clear existing options
+            programSelect.innerHTML = '';
+
+            // Add default option
+            var defaultOption = document.createElement("option");
+            defaultOption.value = "ALL";
+            defaultOption.text = "ALL";
+            defaultOption.disabled = false;
+            defaultOption.selected = true;
+            programSelect.appendChild(defaultOption);
+
+            // Add options based on the selected college
+            if (selectedCollege === "COE") {
+                addOption(programSelect, "BSIT");
+                addOption(programSelect, "BEED");
+                // Add more options for COE as needed
+                programSelect.disabled = false;
+            } else if (selectedCollege === "CAS") {
+                addOption(programSelect, "BSBIO");
+                addOption(programSelect, "BLIS");
+                // Add more options for CAS as needed
+                programSelect.disabled = false;
+            } else if (selectedCollege === "CME") {
+                addOption(programSelect, "BSHM");
+                addOption(programSelect, "BSSS");
+                // Add more options for CME as needed
+                programSelect.disabled = false;
+            } else if (selectedCollege === "ALL") {
+                programSelect.innerHTML = '';
+                var defaultOption = document.createElement("option");
+                defaultOption.value = "ALL";
+                defaultOption.text = "ALL";
+                defaultOption.disabled = false;
+                defaultOption.selected = true;
+                programSelect.appendChild(defaultOption);
+
+                programSelect.disabled = true;
+            }
+        }
+
+        function addOption(selectElement, value) {
+            var option = document.createElement("option");
+            option.value = value;
+            option.text = value;
+            selectElement.appendChild(option);
+        }
+
         var casLabels = ["BSIT", "BSBIO", "BLIS"];
         var coeLabels = ["BSED SCI", "BEED"];
         var cmeLabels = ["BSHM", "BSSS", "BSDS", "GSIS"]
@@ -315,7 +371,7 @@
                     title: {
                         display: true,
                         font:{
-                            size: 20,
+                            size: 15,
                             weight: "bolder"
                         },
                         text: "Total Number of Papers per Programs"

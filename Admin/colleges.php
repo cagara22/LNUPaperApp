@@ -205,17 +205,17 @@
                                 <h4 class="fw-bold card-text-header">College Details</h4>
                             </div>
                             <div class="card-body">
-                                <form class="row" action="" method="">
+                                <form class="row needs-validation" action="" method="" novalidate>
                                     <input type="hidden" name="collegeID" id="collegeID" value="">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="collegeFullName" name="collegeFullName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
+                                            <input type="text" class="form-control" id="collegeFullName" name="collegeFullName" oninput="validateText(this)" placeholder="" pattern="" value="" required>
                                             <label for="collegeFullName">College's Full Name</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="collegeShortName" name="collegeShortName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
+                                            <input type="text" class="form-control" id="collegeShortName" name="collegeShortName" oninput="validateText(this)" placeholder="" pattern="" value="" required>
                                             <label for="collegeShortName">Shorthand Name</label>
                                         </div>
                                     </div>
@@ -255,6 +255,21 @@
                 }
             });
         }
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
 
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces

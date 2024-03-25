@@ -183,8 +183,8 @@
                                 <h4 class="fw-bold card-text-header">Program Details</h4>
                             </div>
                             <div class="card-body">
-                                <form class="row" action="" method="">
-                                    <input type="hidden" name="collegeID" id="collegeID" value="">
+                                <form class="row needs-validation" action="" method="" novalidate>
+                                    <input type="hidden" name="" id="" value="">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" id="programFullName" name="programFullName" oninput="validateText(this)" placeholder="" pattern="" title="" value="" required>
@@ -199,8 +199,9 @@
                                     </div>
                                     <div class="col-6 col-lg-12 mb-1">
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" id="programCollege" name="programCollege" value="">
-                                                <option value="" selected>COE</option>
+                                            <select class="form-select" id="programCollege" name="programCollege" value="" required>
+                                                <option value="" selected disabled>Select a college...</option>
+                                                <option value="" >COE</option>
                                                 <option value="" >CAS</option>
                                                 <option value="" >CME</option>
                                             </select>
@@ -243,6 +244,21 @@
                 }
             });
         }
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
 
         function validateSearch(input) {
             var regex = /^[a-zA-Z0-9\sñÑ-]*$/; // Regular expression to allow only alphanumeric characters and spaces

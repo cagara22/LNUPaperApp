@@ -136,6 +136,44 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1 pb-1 mb-3 border-bottom">
                     <h1 class="fw-bold sub-title">BACKUPS</h1>
                 </div>
+                <div class="row w-100">
+                    <div class="col-12 col-md-6 py-2">
+                        <div class="card custcard border-light text-center" style="width: 100%;">
+                            <div class="card-header">
+                                <h4 class="fw-bold card-text-header">CREATE BACKUP FILE</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="./images/recovery.png" class="cust-img-50 rounded-start" alt="...">
+                                <p>This button creates a backup SQL file that stores all the data in the database that you can use to restore the databse. Please take note where the file will be downloaded.</p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                    <a class="btn btn-add btn-lg fw-bold" href="" role="button">CREATE NEW BACKUP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 py-2">
+                        <div class="card custcard border-light text-center" style="width: 100%;">
+                            <div class="card-header">
+                                <h4 class="fw-bold card-text-header">RESTORE POINT</h4>
+                            </div>
+                            <div class="card-body">
+                                <img src="./images/restore.png" class="cust-img-50 rounded-start" alt="...">
+                                <form class="row g-3" method="post" action="" enctype="multipart/form-data">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                        <div class="mb-3">
+                                            <label for="backupFile" class="form-label">Input Backup .sql file</label>
+                                            <input class="form-control" type="file" id="backupFile" name="backupFile" accept=".sql" required>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2 d-flex justify-content-center">
+                                        <button type="button" class="btn btn-search w-50 fw-bold" name="hidrestore" onclick="confirmRestore(event)">RESTORE</button>
+                                        <button type="submit" class="d-none btn btn-search w-50 fw-bold" name="restore">RESTORE</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
