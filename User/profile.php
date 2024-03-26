@@ -76,66 +76,105 @@
             <div class="container mt-3">
                 <div class="card pb-1" style="background-color: #F0F0F0; border-radius: 10px 10px 0 0">
                     <div class="card-body text-center container-fluid py-2" style="background-color: #d6a73d; border-radius: 10px 10px 0 0">
-                        <h5 class="card-title" style="color: #ffffff;">STUDENT PROFILE</h5>
+                        <h4 class="card-title fw-bold" style="color: #ffffff;">STUDENT PROFILE</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="studentId" class="form-label">Student ID</label>
-                                    <input type="number" class="form-control" id="studentId" name="studentId" maxlength="7">
+                        <form class="row needs-validation" action="" method="" novalidate>
+
+                            <input type="hidden" name="" id="" value="">
+
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="studentID" name="studentID" placeholder="" oninput="validateStudentID(this)" required>
+                                    <label for="studentID">Student ID</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="firstName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" name="firstName" id="firstName">
+                            <div class="col-12 col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" oninput="validateText(this)" required>
+                                    <label for="firstName">FIRST NAME</label>
                                 </div>
+                            </div>
 
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="middleName" class="form-label">Middle Name</label>
-                                    <input type="text" class="form-control" name="middleName" id="middleName">
+                            <div class="col-12 col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="" oninput="validateText(this)">
+                                    <label for="middleName">MIDDLE NAME</label>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="lastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" name="lastName" id="lastName">
+
+                            <div class="col-12 col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" oninput="validateText(this)" required>
+                                    <label for="lastName">LAST NAME</label>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="suffix" class="form-label">Suffix</label>
-                                    <input type="text" class="form-control" name="suffix" id="suffix">
+
+                            <div class="col-12 col-md-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="suffix" name="suffix" placeholder="" oninput="validateText(this)">
+                                    <label for="suffix">SUFFIX</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="college" class="form-label">College</label>
-                                    <select class="form-select" aria-label="Default select example" name="college" id="college">
-                                        <option selected>Select your College Department</option>
-                                        <option value="coe">COE</option>
-                                        <option value="cas">CAS</option>
-                                        <option value="cme">CME</option>
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="college" name="college" value="" required>
+                                        <option value="" selected disabled>Select a college...</option>
+                                        <option value="">COE</option>
+                                        <option value="">CAS</option>
+                                        <option value="">CME</option>
                                     </select>
+                                    <label for="college">COLLEGE</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="program" class="form-label">Program</label>
-                                    <select class="form-select" aria-label="Default select example" name="program" id="program">
-                                        <option selected>Select your Program</option>
-                                        <option value="bsit">BSIT</option>
-                                        <option value="blis">BLIS</option>
-                                        <option value="deezNutz">Deez Nutz</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
 
+                            <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="program" name="program" value="" required>
+                                        <option value="" selected disabled>Select a program...</option>
+                                        <option value="">BSIT</option>
+                                        <option value="">BLIS</option>
+                                        <option value="">Deez Nutz</option>
+                                    </select>
+                                    <label for="program">Program</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 mb-1">
+                                <div class="input-group mb-1">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                        <label for="password">PASSWORD</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="height: 58px;" onclick="password_show_hide();">
+                                            <i class="fas fa-eye" id="show_eye1"></i>
+                                            <i class="fas fa-eye-slash d-none" id="hide_eye1"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" id="passstrength" style="font-weight:bold;padding:6px 12px;">
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 mb-1">
+                                <div class="input-group mb-1">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                                        <label for="cpassword">CONFIRM PASSWORD</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" style="height: 58px;" onclick="cpassword_show_hide();">
+                                            <i class="fas fa-eye" id="show_eye2"></i>
+                                            <i class="fas fa-eye-slash d-none" id="hide_eye2"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
